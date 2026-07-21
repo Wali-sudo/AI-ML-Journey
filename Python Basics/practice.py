@@ -151,4 +151,73 @@ user_string = input("Please enter a long string containing multiple words: ")
 reversed_string = reverse_words(user_string)
 print(f"The string with words in backwards order is: '{reversed_string}'")  
 
-#
+#Write a password generator in Python. Be creative with how you generate passwords - strong passwords have a mix of lowercase letters, uppercase letters, numbers, and symbols. The passwords should be random, generating a new password every time the user asks for a new password. Include your run-time code in a main method.
+
+import random
+import string
+def generate_password(length=12):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+def main():
+    while True:
+        user_input = input("Would you like to generate a new password? (yes/no): ").lower()
+        if user_input == "yes":
+            new_password = generate_password()
+            print(f"Your new password is: {new_password}")
+        elif user_input == "no":
+            print("Thank you for using the password generator!")
+            break
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+if __name__ == "__main__":
+    main()
+
+#Write a function that takes an ordered list of numbers (a list where the elements are in order from smallest to largest) and another number. The function decides whether or not the given number is inside the list and returns (then prints) an appropriate boolean.
+
+def is_number_in_list(ordered_list, number):
+    return number in ordered_list
+
+# Example usage:
+my_list = [1, 3, 5, 7, 9]
+print(is_number_in_list(my_list, 5))  # Output: True
+print(is_number_in_list(my_list, 4))  # Output: False
+
+#Take the code from the How To Decode A Website exercise (if you didn’t do it or just want to play with some different code, use the code from the solution), and instead of printing the results to a screen, write the results to a txt file. In your code, just make up a name for the file you are saving to.
+
+with open("results.txt", "w") as f:
+    f.write("This is the result of the decoding exercise.\n")
+    f.write("You can add more results here as needed.\n")
+
+#Given a .txt file that has a list of a bunch of names, count how many of each name there are in the file, and print out the results to the screen. 
+
+with open("names.txt", "r") as f:
+    names = f.readlines()
+name_count = {}
+for name in names:
+    name = name.strip()
+    if name in name_count:
+        name_count[name] += 1
+    else:
+        name_count[name] = 1 
+for name, count in name_count.items():
+    print(f"{name}: {count}")
+
+#we will keep track of when our friend’s  birthdays are, and be able to find that information based on their name. Create a dictionary (in your file) of names and birthdays. When you run your program it should ask the user to enter a name, and return the birthday of that person back to them
+
+birthdays = {
+    "Alice": "January 1",
+    "Bob": "February 2",
+    "Charlie": "March 3",
+    "David": "April 4",
+    "Eve": "May 5"
+}
+
+name = input("Enter a name: ")
+if name in birthdays:
+    print(f"{name}'s birthday is {birthdays[name]}.")
+else:
+    print("Name not found.")
+    
