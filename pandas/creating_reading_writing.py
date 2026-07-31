@@ -32,8 +32,7 @@ print(spotify_data.shape)#shape attribute to check how large the resulting DataF
 #Tell Pandas what values should be treated as empty
 #df = pd.read_csv('data.csv', na_values=['N/A', 'Unknown', '-'])
 
-#if csv file has an built in index column,pandas doesnt pick it up automatically,If your CSV already includes an index column (like IDs or row numbers as column 0)
-#wine_reviews = pd.read_csv("../input/wine-reviews/winemag-data-130k-v2.csv", index_col=0)
+#if csv file has an built in index column,pandas doesnt pick it up automatically,If your CSV already includes an index column (like IDs or row numbers as column 0) use indexcol
 spotify_data=pd.read_csv('/home/waliahmad/Downloads/most_streamed_spotify_2025.csv',index_col=0)
 print(spotify_data.head())
 
