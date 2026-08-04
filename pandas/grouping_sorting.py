@@ -12,7 +12,7 @@ reviews.groupby(['country', 'province']).apply(lambda df: df.loc[df.points.idxma
 
 #Another groupby() method worth mentioning is agg(), which lets you run a bunch of different functions on your DataFrame simultaneously
 reviews.groupby(['country']).price.agg([len, min, max])
-
+#if agg(consist of one function then it returns a Series, if consist of multiple functions then it returns a DataFrame with each function as a column.)
 
 #sorting 
 #Sorting reorganizes the order of rows or columns based on their values or their index labels.
