@@ -1,12 +1,12 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-spotify_data=pd.read_csv('/home/waliahmad/Downloads/spotify.csv', index_col=0)
+spotify_data=pd.read_csv('/home/waliahmad/Downloads/spotify.csv', index_col=0,parse_dates=True)#parsing the date column as index and converting it to datetime format
 print(spotify_data.head())
 print(spotify_data.tail())
 
 # Line chart showing daily global streams of each song 
-#sns.lineplot(data=spotify_data)
+sns.lineplot(data=spotify_data)
 
 #setting the width and height of the figure
 plt.figure(figsize=(14, 7))
@@ -20,7 +20,7 @@ plt.xlabel('Date', fontsize=14)
 # setting the y-axis label
 plt.ylabel('Global Streams', fontsize=14)
 
-#sns.lineplot(data=spotify_data)
+sns.lineplot(data=spotify_data)
 
 #plot a subset of the data for better visualization
 sns.lineplot(data=spotify_data['Shape of You'], label='Shape of You')#label is used to give a name to the line in the graph
