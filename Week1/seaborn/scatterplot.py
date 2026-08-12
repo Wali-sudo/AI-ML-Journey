@@ -29,3 +29,13 @@ sns.lmplot(data=insurance_data, x='age', y='charges', hue='sex', scatter_kws={'s
 plt.xlabel("Age")
 plt.ylabel("Charges")
 plt.show()  
+
+
+
+#for categorical scatter plot we use swarmplot instead of scatterplot, swarmplot is used to show the relationship between a categorical variable and a continuous variable
+plt.figure(figsize=(14, 7))
+plt.title("Swarmplot of Smoker vs. Charges")
+sns.swarmplot(data=insurance_data, x='smoker', y='charges', hue='sex')#showing the relationship between smoker and charges using a swarmplot, with different colors for male and female
+plt.xlabel("Smoker")
+plt.ylabel("Charges")
+plt.show() 
